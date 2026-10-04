@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>For My Best Friend 💗</title>
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0; min-height:100vh; overflow:hidden;
+  font-family:Georgia,serif; color:#fff;
+  background:radial-gradient(circle at 50% 25%,#3b0638 0,#17001b 48%,#050007 100%);
+}
+.hidden{display:none!important}
+.screen{
+  min-height:100vh; width:100%; display:flex; align-items:center; justify-content:center;
+  padding:24px; position:relative; overflow:hidden;
+}
+.card{
+  width:min(92vw,430px); padding:30px 22px; border-radius:24px;
+  background:rgba(44,0,42,.88); border:1px solid rgba(255,120,220,.3);
+  box-shadow:0 0 45px rgba(255,0,180,.16); text-align:center;
+}
+h1{margin:8px 0 12px;font-size:30px}
+p{line-height:1.6}
+input{
+  width:100%; padding:14px 16px; border-radius:14px; border:0; outline:0;
+  background:#fff;color:#35102f;font-size:16px;text-align:center;
+}
+button{
+  margin-top:16px; border:0; border-radius:999px; padding:13px 24px;
+  background:linear-gradient(90deg,#ff4fb3,#b94cff); color:#fff;
+  font-weight:bold; cursor:pointer; font-size:15px;
+  box-shadow:0 8px 22px rgba(255,50,180,.2);
+}
+.error{color:#ff9dcf;min-height:22px;margin-top:8px}
+
+.bunting{position:absolute;top:18px;left:0;right:0;display:flex;justify-content:center;gap:8px}
+.flag{width:0;height:0;border-left:13px solid transparent;border-right:13px solid transparent;border-top:26px solid #ff5aa8}
+.flag:nth-child(2n){border-top-color:#21b7ff}.flag:nth-child(3n){border-top-color:#ffd21c}
+.flag:nth-child(4n){border-top-color:#35df8b}
+
+.title{font-size:24px;margin:10px 0 14px}
+.subtitle{font-size:16px;line-height:1.5;margin:0 auto 8px;max-width:330px}
+.cake-wrap{position:relative;width:300px;height:270px;margin:8px auto 0}
+.plate{position:absolute;bottom:13px;left:25px;width:250px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+.cake{position:absolute;bottom:35px;left:40px;width:220px;height:145px;border-radius:0 0 25px 25px;background:linear-gradient(#8d4b0a 0 33%,#6e3507 33% 66%,#914d0a 66%);box-shadow:0 5px 0 #512404}
+.cake:before{content:"";position:absolute;left:0;right:0;top:42px;height:7px;background:#4b2105;opacity:.75}
+.cake:after{content:"";position:absolute;left:0;right:0;top:91px;height:7px;background:#4b2105;opacity:.75}
+.frost{position:absolute;top:-13px;left:-2px;width:224px;height:60px;border-radius:50%;background:#fffdf9;box-shadow:0 2px 0 rgba(0,0,0,.08)}
+.drip{position:absolute;top:22px;width:34px;height:42px;background:#fffdf9;border-radius:0 0 18px 18px;z-index:2}
+.d1{left:20px}.d2{left:94px;height:54px}.d3{right:17px;height:62px}
+.candle{position:absolute;bottom:176px;left:145px;width:13px;height:57px;background:#e21e27;border-radius:3px;z-index:5;box-shadow:inset -3px 0 rgba(130,0,0,.2)}
+.flame{position:absolute;left:-4px;top:-29px;width:21px;height:31px;border-radius:55% 45% 60% 40%;background:#ffb000;box-shadow:0 0 22px #ff8c00;animation:flicker .18s infinite alternate}
+@keyframes flicker{to{transform:scale(1.12) translateY(-2px)}}
+.blow{animation:fadeFlame .55s forwards}
+@keyframes fadeFlame{to{opacity:0;transform:scale(.15) translateY(-25px)}}
+.confetti{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.confetti i{position:absolute;width:5px;height:13px;top:-20px;animation:fall 2.8s linear infinite;opacity:.9}
+@keyframes fall{to{transform:translateY(320px) rotate(540deg)}}
+.mic-status{font-size:13px;min-height:20px;opacity:.85;margin-top:8px}
+.mic-button{background:linear-gradient(90deg,#ff4fb3,#b94cff)}
+#balloonArea{position:relative;width:min(390px,90vw);height:430px;margin:auto}
+.balloon{
+ position:absolute;width:78px;height:98px;border-radius:50% 50% 48% 48%;
+ cursor:pointer;box-shadow:inset 12px 8px 15px rgba(255,255,255,.22),0 8px 20px rgba(0,0,0,.2);
+}
+.balloon:after{content:"";position:absolute;bottom:-7px;left:34px;border-left:6px solid transparent;border-right:6px solid transparent;border-top:9px solid currentColor}
+.balloon .shine{position:absolute;width:17px;height:23px;border-radius:50%;background:#fff;opacity:.75;left:17px;top:17px}
+.string{position:absolute;width:1px;height:260px;background:#eee;left:50%;top:92px;transform-origin:top}
+.b1{left:20px;top:35px;background:#ef6f9e;color:#ef6f9e}.b1 .string{transform:rotate(9deg)}
+.b2{left:105px;top:65px;background:#f0ad17;color:#f0ad17}.b2 .string{transform:rotate(2deg)}
+.b3{left:190px;top:65px;background:#25c875;color:#25c875}.b3 .string{transform:rotate(-2deg)}
+.b4{left:275px;top:35px;background:#35a9e8;color:#35a9e8}.b4 .string{transform:rotate(-9deg)}
+.popped{animation:pop .3s forwards}
+@keyframes pop{to{transform:scale(1.5);opacity:0}}
+
+.memory{
+  width:min(360px,90vw); padding:16px; margin:15px auto; border-radius:18px;
+  background:#d38b45; color:#321321; transform:rotate(-1deg);
+}
+.memory img{width:100%;height:190px;object-fit:cover;border-radius:10px;background:#f1b36e}
+.note{background:#fffaf1;color:#3b2631;padding:22px;border-radius:4px;text-align:left;line-height:1.65;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.next{margin-top:18px}
+
+.gift{font-size:80px;animation:bounce 1.2s infinite alternate}
+@keyframes bounce{to{transform:translateY(-12px) rotate(4deg)}}
+.small{opacity:.8;font-size:13px}
+.heart{position:absolute;font-size:24px;animation:float 4s linear infinite;opacity:.7}
+@keyframes float{from{transform:translateY(110vh)}to{transform:translateY(-20vh) rotate(360deg)}}
+</style>
+</head>
+<body>
+
+<section id="lock" class="screen">
+  <div class="card">
+    <div style="font-size:45px">🔐💗</div>
+    <h1>Only for you</h1>
+    <p>This little surprise has a secret code.<br>Enter the code we both know.</p>
+    <input id="code" type="password" placeholder="Secret code">
+    <button onclick="unlock()">Open my surprise 💕</button>
+    <div id="err" class="error"></div>
+    <div class="small">Change the secret code in the JavaScript below.</div>
+  </div>
+</section>
+
+<section id="cake" class="screen hidden">
+  <div class="bunting">
+    <i class="flag"></i><i class="flag"></i><i class="flag"></i><i class="flag"></i>
+    <i class="flag"></i><i class="flag"></i><i class="flag"></i><i class="flag"></i>
+  </div>
+  <div class="card">
+    <div class="title">🎂 A little birthday surprise 🎂</div>
+    <p class="subtitle">Happy Birthday, Cutiepiee! 💗<br>Make a wish... then blow on your phone to put out the candle.</p>
+    <div class="cake-wrap" id="cakeWrap">
+      <div class="confetti">
+        <i style="left:8%;animation-delay:.1s;background:#ff4f9a"></i><i style="left:18%;animation-delay:1s;background:#ffcf2f"></i><i style="left:30%;animation-delay:.4s;background:#36bdf2"></i><i style="left:42%;animation-delay:1.4s;background:#ff4f9a"></i><i style="left:54%;animation-delay:.7s;background:#ffcf2f"></i><i style="left:67%;animation-delay:1.7s;background:#36bdf2"></i><i style="left:79%;animation-delay:.3s;background:#ff4f9a"></i><i style="left:91%;animation-delay:1.2s;background:#ffcf2f"></i>
+      </div>
+      <div class="plate"></div><div class="cake"><div class="frost"></div><div class="drip d1"></div><div class="drip d2"></div><div class="drip d3"></div></div>
+      <div class="candle"><div class="flame"></div></div>
+    </div>
+    <button class="mic-button" id="micBtn" onclick="startBlowDetection()">🎤 Turn on microphone</button>
+    <div class="mic-status" id="micStatus">Tap the button, allow the microphone, then blow gently.</div>
+    <button id="backupBlow" onclick="blow()" style="background:#5f456b">Tap if microphone doesn't work</button>
+  </div>
+</section>
+
+<section id="balloons" class="screen hidden">
+  <div class="card">
+    <div class="title">Pop all 4 balloons 🎈</div>
+    <div id="balloonArea">
+      <div class="balloon b1" onclick="pop(this)"><span class="shine"></span><span class="string"></span></div>
+      <div class="balloon b2" onclick="pop(this)"><span class="shine"></span><span class="string"></span></div>
+      <div class="balloon b3" onclick="pop(this)"><span class="shine"></span><span class="string"></span></div>
+      <div class="balloon b4" onclick="pop(this)"><span class="shine"></span><span class="string"></span></div>
+    </div>
+    <p id="balloonHint">Tap each balloon 💕</p>
+  </div>
+</section>
+
+<section id="moments" class="screen hidden">
+  <div class="card">
+    <div class="title">Some Sweet Moments 💗</div>
+    <div class="memory">
+      <!-- Replace this with your photo:
+           <img src="your-photo.jpg" alt="Our memory">
+      -->
+      <div style="height:190px;display:grid;place-items:center;font-size:60px">🫶📸</div>
+      <h3>My favorite memories with you</h3>
+      <p>Some people become friends. Somehow, you became family. ❤️</p>
+    </div>
+    <button class="next" onclick="show('message')">Next 💕</button>
+  </div>
+</section>
+
+<section id="message" class="screen hidden">
+  <div class="card">
+    <div class="title">A Special Message 💌</div>
+    <div class="note">
+      <p><b>To my best friend,</b></p>
+      <p>Thank you for being one of the people who makes life brighter. I’m really grateful for every laugh, every conversation, and every memory we’ve made.</p>
+      <p>I hope this little surprise makes you smile. No matter what happens, I’ll always appreciate having you as my best friend. ❤️</p>
+      <p><b>— From your best friend 💗</b></p>
+    </div>
+    <button class="next" onclick="show('gift')">One last thing… 🎁</button>
+  </div>
+</section>
+
+<section id="gift" class="screen hidden">
+  <div class="card">
+    <div class="gift">🎁</div>
+    <h1>For you 💗</h1>
+    <p>You deserve all the happiness, laughter and good moments in the world.</p>
+    <p><b>Happy Birthday, bestie! 🥹❤️</b></p>
+    <button onclick="location.reload()">Replay ↻</button>
+  </div>
+</section>
+
+<script>
+/* =========================
+   CHANGE YOUR SECRET CODE HERE
+   ========================= */
+const SECRET_CODE = "2026";
+
+function unlock(){
+  const entered = document.getElementById("code").value.trim();
+  const err = document.getElementById("err");
+  if(entered === SECRET_CODE){
+    err.textContent = "";
+    show("cake");
+  }else{
+    err.textContent = "Hmm... that's not our secret code 😭";
+  }
+}
+function show(id){
+  document.querySelectorAll(".screen").forEach(s=>s.classList.add("hidden"));
+  document.getElementById(id).classList.remove("hidden");
+}
+let candleOut=false;
+let audioStream=null;
+let audioContext=null;
+let analyser=null;
+let micFrame=null;
+
+function blow(){
+  if(candleOut) return;
+  candleOut=true;
+  if(micFrame) cancelAnimationFrame(micFrame);
+  if(audioStream) audioStream.getTracks().forEach(t=>t.stop());
+  if(audioContext) audioContext.close().catch(()=>{});
+  document.querySelectorAll(".flame").forEach(f=>f.classList.add("blow"));
+  document.getElementById("micStatus").textContent="✨ You blew out the candle!";
+  document.getElementById("micBtn").disabled=true;
+  setTimeout(()=>show("balloons"),1100);
+}
+
+async function startBlowDetection(){
+  if(candleOut) return;
+  const status=document.getElementById("micStatus");
+  const btn=document.getElementById("micBtn");
+  try{
+    if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia){
+      status.textContent="Your browser doesn't support microphone access. Use the backup button below.";
+      return;
+    }
+    audioStream=await navigator.mediaDevices.getUserMedia({audio:true});
+    audioContext=new (window.AudioContext||window.webkitAudioContext)();
+    const source=audioContext.createMediaStreamSource(audioStream);
+    analyser=audioContext.createAnalyser();
+    analyser.fftSize=1024;
+    source.connect(analyser);
+    const data=new Uint8Array(analyser.fftSize);
+    btn.textContent="🎤 Listening... blow!";
+    status.textContent="Microphone is on — blow toward the phone.";
+    let strong=0;
+    function check(){
+      analyser.getByteTimeDomainData(data);
+      let sum=0;
+      for(let i=0;i<data.length;i++){const x=(data[i]-128)/128;sum+=x*x;}
+      const rms=Math.sqrt(sum/data.length);
+      if(rms>0.18){ strong++; } else { strong=Math.max(0,strong-1); }
+      if(strong>=5){ blow(); return; }
+      micFrame=requestAnimationFrame(check);
+    }
+    check();
+  }catch(e){
+    status.textContent="Microphone permission was blocked. Allow it, or use the backup button.";
+  }
+}
+let popped=0;
+function pop(el){
+  if(el.classList.contains("popped")) return;
+  el.classList.add("popped"); popped++;
+  if(popped===4){
+    document.getElementById("balloonHint").textContent="You did it! 💗";
+    setTimeout(()=>show("moments"),700);
+  }
+}
+// Floating hearts
+for(let i=0;i<12;i++){
+  const h=document.createElement("div");
+  h.className="heart"; h.textContent=["❤","💗","💕","✨"][i%4];
+  h.style.left=(Math.random()*100)+"vw";
+  h.style.animationDelay=(Math.random()*4)+"s";
+  h.style.animationDuration=(3+Math.random()*4)+"s";
+  document.body.appendChild(h);
+}
+</script>
+</body>
+</html>
